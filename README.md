@@ -2,15 +2,15 @@
 ```sh
 sudo apt update
 sudo apt upgrade -y
-sudo apt install build-essential
-sudo apt install bison
-sudo apt install flex
-sudo apt install libgmp3-dev
-sudo apt install libmpc-dev
-sudo apt install libmpfr-dev
-sudo apt install texinfo
-sudo apt install libcloog-isl-dev
-sudo apt install libisl-dev
+sudo apt install build-essential -y
+sudo apt install bison -y
+sudo apt install flex -y
+sudo apt install libgmp3-dev -y
+sudo apt install libmpc-dev -y
+sudo apt install libmpfr-dev -y
+sudo apt install texinfo -y 
+sudo apt install libcloog-isl-dev -y
+sudo apt install libisl-dev -y
 export CC=/usr/local/bin/gcc-4.9
 export LD=/usr/local/bin/gcc-4.9
 export PREFIX="/usr/local/i386elfgcc"
