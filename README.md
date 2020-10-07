@@ -3,7 +3,7 @@
 sudo apt update
 sudo apt upgrade -y
 sudo apt install build-essential bison flex libgmp3-dev libmpc-dev \
-libmpfr-dev texinfo libcloog-isl-dev libisl-dev
+libmpfr-dev texinfo libcloog-isl-dev libisl-dev curl
 
 export PREFIX="$HOME/opt/cross"
 export TARGET=i686-elf
