@@ -10,7 +10,7 @@ export PATH="$PREFIX/bin:$PATH"
 
 mkdir /tmp/src
 cd /tmp/src
-curl -O https://ftp.gnu.org/gnu/binutils/binutils-2.31.1.tar.xz # If the link 404's, look for a more recent version
+curl -O https://ftp.gnu.org/gnu/binutils/binutils-2.31.1.tar.xz
 tar xvf binutils-2.31.1.tar.xz
 mkdir binutils-build
 cd binutils-build
