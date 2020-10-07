@@ -8,25 +8,25 @@ export PREFIX="$HOME/opt/cross"
 export TARGET=i686-elf
 export PATH="$PREFIX/bin:$PATH"
 
-mkdir /tmp/src
-cd /tmp/src
+mkdir $HOME/src
+cd $HOME/src
 curl -O https://ftp.gnu.org/gnu/binutils/binutils-2.31.1.tar.xz
 tar xvf binutils-2.31.1.tar.xz
 mkdir binutils-build
 cd binutils-build
-sudo ../binutils-2.31.1/configure --target=$TARGET --enable-interwork --enable-multilib --disable-nls --disable-werror --prefix=$PREFIX 2>&1 | tee configure.log
-sudo make all install 2>&1 | tee make.log
+../binutils-2.31.1/configure --target=$TARGET --prefix="$PREFIX" --with-sysroot --disable-nls --disable-werror
+make all install 2>&1 | tee make.log
 
-cd /tmp/src
+cd $HOME/src
 curl -O https://ftp.gnu.org/gnu/gcc/gcc-8.2.0/gcc-8.2.0.tar.xz
 tar xvf gcc-8.2.0.tar.xz
 mkdir gcc-build
 cd gcc-build
-sudo ../gcc-8.2.0/configure --target=$TARGET --prefix="$PREFIX" --disable-nls --disable-libssp --enable-languages=c --without-headers
-sudo make all-gcc 
-sudo make all-target-libgcc 
-sudo make install-gcc 
-sudo make install-target-libgcc 
+../gcc-8.2.0/configure --target=$TARGET --prefix="$PREFIX" --disable-nls --enable-languages=c,c++ --without-headers
+make all-gcc 
+make all-target-libgcc 
+make install-gcc 
+make install-target-libgcc 
 
 
 ```
